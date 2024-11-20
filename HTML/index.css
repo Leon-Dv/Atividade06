@@ -1,0 +1,597 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Remove margens e paddings padrões de todos os elementos.
+Define o box-sizing como border-box, o que faz com que largura e altura incluam bordas e paddings*/
+
+:root {
+    --primary: #ff0000;
+}
+/* Define uma variável --primary com a cor vermelha, permitindo reutilizá-la no código. */
+
+body {
+    position: relative;
+    background-color: #000000;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Configura o corpo da página com: Fundo preto. Fonte padrão "Roboto". Largura de 100% e altura mínima de 100% da viewport. Esconde conteúdos que ultrapassarem a tela. */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 20;
+}
+/* O cabeçalho é posicionado no topo da página e ocupa toda a largura. Usa display: flex para alinhar elementos horizontalmente com espaçamento entre eles. Adiciona um padding interno e uma borda inferior semitransparente.  */
+
+.logo img {
+    max-width: 60px;
+    max-height: 60px;
+    filter: invert(1);
+    transition: transform 0.5s ease;
+}
+/* Limita o tamanho da imagem da logo. */
+
+.logo:hover img {
+    transform: rotate(540deg) scale(1.2);
+    transition: transform 0.5s ease;
+}
+/* Inverte as cores da logo e adiciona um efeito de transformação ao passar o mouse, girando e ampliando a imagem. */
+
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif;    
+    
+} /* A barra de navegação usa layout flexível para espaçar itens igualmente. */
+
+.nav li {
+    list-style-type: none;
+    
+} 
+.nav li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px;
+    
+} /* Remove marcadores de lista e estiliza links com letras maiúsculas e espaçamento. */
+
+.nav li:hover a {
+    color: var(--primary);
+} /* Altera a cor dos links para a variável --primary ao passar o mouse. */
+
+.search {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    transition: 0.5s;
+}
+
+.search:hover {
+    width: 300px;
+} /* O campo de pesquisa se expande ao passar o mouse */
+
+.search input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    border-radius: 4px;
+    padding: 0 10px 0 5px;
+}
+
+.search input::placeholder {
+    color: #ffffff;
+    text-transform: uppercase;
+    transform: translateX(5px);
+    font-weight: 300;
+} /* Estiliza o campo de texto com borda semitransparente e texto placeholder em maiúsculas.*/
+
+
+.login-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.login-controls input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    flex: 1;
+    transition: box-shadow 0.3s ease;
+}
+.login-controls input[type="text"]:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: transparent;
+}
+.login-controls .login-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.login-controls .login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.137);
+} /* Organiza campos de texto e botões de login horizontalmente 
+Adiciona transições para realce ao focar ou passar o mouse.*/
+
+.login-controls .login-btn:active {
+    transform: scale(0.98);
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+} /* Configurações gerais do contêiner do Swiper */
+ 
+
+.swiper .swiper-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper .swiper-wrapper .swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper .swiper-wrapper .swiper-slide::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+} /* Sobreposição escura semitransparente sobre cada slide */
+
+.swiper .swiper-wrapper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+} /* Imagens dentro dos slides: ocupam toda a área com ajuste de proporção */
+
+.swiper .swiper-wrapper .swiper-slide .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+} /* Banner principal dentro de cada slide */
+
+.swiper .swiper-wrapper .swiper-slide .banner img {
+    position: absolute;
+    max-width: 700px;
+    transform: translateX(-50%);
+    z-index: 1;
+    left: 50%;
+} /* Imagem destacada dentro do banner */
+
+.swiper .swiper-button-prev {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 60%;
+    z-index: 100;
+    background-color: #ffffff18;
+    border-radius: 20px;
+    border: 1px solid #fff;
+}
+.swiper .swiper-button-next {
+    position: absolute;
+    right: 70%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    z-index: 100;
+    background-color: #ffffff18;
+    border-radius: 20px;
+    border: 1px solid #fff;    
+} /* Botões de navegação (anterior e próximo) do Swiper */
+
+
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 60px;
+    line-height: 0;
+    background: transparent;
+    border-radius: 50%;
+} /* Configuração de cor para os ícones dos botões */
+
+
+.right {
+    max-height: 70vh;
+}
+
+
+.banner img {
+    max-width: 790px;
+    max-height: 790px;
+    width: 50%;
+    height: 50%;
+}
+
+.swiper .swiper-wrapper .swiper-slide .banner .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 20px; 
+    padding: 20px;
+    
+}
+
+.swiper .swiper-wrapper .swiper-slide .banner {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 100%; 
+}
+
+.banner .left,
+.banner .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    height: 60%;
+    max-width: 50%; 
+    
+} /* Configurações para o conteúdo do banner: lado esquerdo e lado direito */
+
+.banner .left{
+    align-items: start;
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+} 
+
+.banner .left .features {
+    max-width: 400px;
+    margin-bottom: 100px;
+    text-align: center;    
+} /* Estilo do texto e recursos na seção esquerda do banner */
+
+.banner .left .features .rating {
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 5px;    
+
+} /* Estiliza a seção de classificação dentro do banner */
+
+
+.banner .left .features .rating .score {
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--primary);
+    background: #ffffff;
+    margin-bottom: 20px;
+   
+} /* Define a pontuação da classificação */
+
+.banner .left .features .content {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    text-align: start;
+    padding: 5px;
+    bottom: 5%;
+   
+} /* Configura o conteúdo principal */
+
+.pricing-pkmn{
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 5px;    
+   
+} /* Estiliza a seção de preço */
+
+.comprar{
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    background: red;
+    margin-bottom: 20px;
+    margin-right: 1px;
+} /* Estiliza o botão de compra */
+
+
+.banner .left .features .pkmn-content{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    bottom: 5%;
+
+} /* Configura o conteúdo específico do Pokémon: */
+
+ .subtitle{
+    padding: 5px 0px;
+
+} /* Adiciona padding vertical de 5px ao subtítulo. */
+
+.banner .left .features .pricing {
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+} /* Estiliza a área de preço */
+
+.banner .left .features .content h4 {
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+} /* Configura os títulos dentro do conteúdo */
+
+.banner .left .features .content span {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.banner .left .features .content .subtitle {
+    color: var(--primary);
+    font-size: large;
+} /* Define os subtítulos com cor primária e fonte maior. */
+
+.banner h1 {
+    color: #ffffff;
+    font-size: 3em;
+    letter-spacing: 5px;
+    line-height: 0.9;
+    z-index: 10;
+    text-transform: uppercase;
+   
+}
+
+.swiper .swiper-wrapper .swiper-slide .banner .right {
+    position: relative;
+    height: 100vh;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    z-index: 100;
+} /* onfigura o lado direito do banner */
+
+.description {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: right;
+} /* Texto de descrição dentro do banner */
+
+#data, #mode{
+    font-size: 2rem;
+}
+
+#desc-pkmn , #desc-zelda{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: right;
+}/* A descrição à direita tem padding no topo e na direita e cor branca. */
+
+.banner .right .description li {
+    list-style: none;
+}
+/* Remove o estilo de lista dos itens de descrição à direita. */
+
+.banner .right .description h4 {
+    display: inline-block;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+/* O título 'h4' da descrição à direita tem tamanho de fonte 1.3em, maiúsculas, peso 400, espaçamento entre letras de 1px, e é exibido como bloco inline. */
+
+.banner .right .description p {
+    margin: 5px 0 25px 30px;
+    font-weight: 300;
+}
+/* Os parágrafos na descrição têm margem superior de 5px e margem inferior de 25px, com peso de fonte leve (300). */
+
+.banner .right h2 {
+    color: #ffffff;
+    font-size: 3.5em;
+    line-height: 1em;
+    font-weight: 400;
+    text-align: right;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+/* O título 'h2' à direita tem cor branca, fonte grande (3.5em), linha de altura 1em, peso de fonte 400, alinhamento à direita e margem inferior de 20px, e é exibido em maiúsculas. */
+
+.banner .right iframe {
+    max-width: 450px;
+    max-height: 250px;
+} /* Estilização para iframes no banner */
+
+#zelda-title{
+    font-size: 5rem;
+    width: 80%;
+    font-family: "Luckiest Guy", sans-serif;
+}
+#pokemon-title{
+    font-size: 7rem;
+    font-family: "Luckiest Guy", sans-serif;
+}
+.pokemon-img{
+    margin-top: 8%;
+}
+#mario-title{
+    font-size: 7rem;
+    font-family: "Luckiest Guy", sans-serif;
+} /* Configurações de título por temas específicos */
+
+.swiper .swiper-wrapper .swiper-slide .banner {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 50px; 
+}
+
+/* Estilo básico do modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+  }
+  
+  /* Conteúdo do modal */
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  
+  /* Estilo adicional para botões */
+  button.open-modal, .btn-buy {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.open-modal:hover{
+    background-color: var(--primary-dark);
+  }
+
+  .btn-buy:hover {
+    background-color: #c70303;
+  }  
+ 
+
+ 
+  /* Tabs (navegação entre descrições) */
+  .tabs {
+    display: flex;
+    justify-content: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    flex: 1 1 30%;
+    background: #eaeaea;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .tab-button.active {
+    background: var(--primary);
+    color: #fff;
+  }
+  
+  /* Conteúdo das tabs */
+  .tab-content {
+    display: none;
+    text-align: center;
+  }
+  .tab-content .btn-buy{
+    margin-top: 20px;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  /* Imagem do jogo */
+  .game-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }  

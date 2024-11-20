@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Define o tipo de documento como HTML5 e define o idioma da página como inglês -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define o conjunto de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Define a viewport para que a página seja responsiva em dispositivos móveis -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Link para o arquivo CSS local com os estilos da página -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Link para a folha de estilo do Swiper, uma biblioteca para carrosséis -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Luckiest+Guy&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Gaming Website Landing Page</title>
+    <!-- Define o título da página que aparece na aba do navegador -->
+
+
+</head>
+
+<body>
+    <!-- Corpo principal da página -->
+    <header>
+        <!-- Cabeçalho principal -->
+        <a href="#" class="logo" aria-label="Página inicial">
+            <img src="images/nintendo-switch.png" alt="Nintendo Switch logo" height="240" width="240" />
+        </a>
+        <nav>
+            <!-- Navegação principal -->
+            <ul class="nav">
+                <li>
+                    <a href="https://www.nintendo.com/us/whatsnew/" target="_blank" rel="noopener noreferrer">Switch
+                        News</a>
+                </li>
+                <li>
+                    <a href="https://www.nintendo.com/pt-br/switch/online/" target="_blank"
+                        rel="noopener noreferrer">Switch Online</a>
+                </li>
+                <li>
+                    <a href="https://www.nintendo.com/us/switch/online/nintendo-switch-online/classic-games/"
+                        target="_blank" rel="noopener noreferrer">Switch Classic</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div>
+            <!-- Controles de login -->
+            <div class="login-controls">
+                <input type="text" id="username" placeholder="Usuário" />
+                <button type="button" class="login-btn">Login</button>
+            </div>
+
+        </div>
+
+        <div class="search">
+            <!-- Campo de busca -->
+            <label for="gameInput" class="visually-hidden"></label>
+            <input type="text" id="gameInput" placeholder="Search" />
+        </div>
+
+        <!-- Botão para abrir o modal -->
+        <button class="open-modal" data-modal="game-info">Mais Informações</button>
+
+        <!-- Modal de informações -->
+        <div id="game-info" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" data-modal="game-info">&times;</span>
+                <h2>Detalhes do Jogo</h2>
+                <!-- Navegação entre descrições -->
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="mario-description">Mario</button>
+                    <button class="tab-button" data-tab="pkmn-description">Pokémon</button>
+                    <button class="tab-button" data-tab="zelda-description">Zelda</button>
+                </div>
+                <!-- Descrições dos jogos -->
+                <div class="tab-content active" id="mario-description">
+                    <img src="./images/marioOdissey.png" alt="Mario Game" class="game-image">
+                    <p>Explore um mundo cheio de desafios e aventuras. Descubra segredos e enfrente inimigos únicos em
+                        uma jornada inesquecível.</p>
+                    <button class="btn-buy"><a href="https://www.nintendo.com/pt-br/store/products/super-mario-odyssey-switch/?srsltid=AfmBOoqeBwzI5XMWhjLiOFZavmkxutmTPoFS8QITQIuE2VnYVDf2KT9b">Comprar Jogo</a></button>
+                </div>
+                <div class="tab-content" id="pkmn-description">
+                    <img src="./images/pokemonLegends.png" alt="Pokémon Game" class="game-image">
+                    <p>Capture criaturas incríveis, construa sua equipe e torne-se um Mestre Pokémon em uma jornada
+                        cheia de batalhas emocionantes!</p>
+                    <button class="btn-buy"><a href="https://www.nintendo.com/pt-br/store/products/pokemon-legends-arceus-switch/?srsltid=AfmBOopwG7aMLkeSIEd7ZsqCifS5cyc0ma5t6pIGb9NdI9GIVqmwzg8T">Comprar Jogo</a></button>
+                </div>
+                <div class="tab-content" id="zelda-description">
+                    <img src="./images/Zelda.png" alt="Zelda Game" class="game-image">
+                    <p>Embrenhe-se em uma aventura épica por terras desconhecidas, resolvendo quebra-cabeças e
+                        enfrentando inimigos formidáveis.</p>
+                    <button class="btn-buy"><a
+                            href="https://www.nintendo.com/pt-br/store/products/the-legend-of-zelda-breath-of-the-wild-switch/?srsltid=AfmBOooAc8hPBpzckaYkpQIsDhjRyL7IOC0t5rB15nAOWiDyIGaSFMQr">Comprar
+                            Jogo</a></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Conteúdo principal -->
+        <div class="swiper" aria-label="Carrossel de jogos">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <article class="swiper-slide" id="slide-1">
+                    <figure>
+                        <img src="images/super_mario_odyssey_dinosaur_4k.jpeg" alt="Banner do Super Mario Odyssey" />
+                    </figure>
+                    <div class="backscene"></div>
+                    <div class="banner">
+                        <div class="left">
+                            <section class="features">
+                                <div class="rating">
+                                    <span class="score">9.2</span>
+                                    <div class="content">
+                                        <span class="subtitle">M E T A S C O R E</span>
+                                        <h4>Ótimo</h4>
+                                        <p>Explore lugares incríveis longe do Reino Cogumelo com o Mario e o novo aliado
+                                            Cappy em uma imensa aventura 3D ao redor do mundo. </p>
+                                    </div>
+                                </div>
+                                <div class="pricing">
+                                    <a href="https://www.nintendo.com/pt-br/store/products/super-mario-odyssey-switch/?srsltid=AfmBOoqeBwzI5XMWhjLiOFZavmkxutmTPoFS8QITQIuE2VnYVDf2KT9b">
+                                        <span class="comprar">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </span>
+                                    </a>
+                                    <div class="content">
+                                        <span class="subtitle">Super Mario Odyssey</span>
+                                        <h4>COMPRE AGORA</h4>
+                                        <p>Plataforma, Aventura, Ação</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <h1 id="mario-title">Mário</h1>
+                        </div>
+                        <img src="images/mario.png" alt="Imagem do personagem Mario" />
+                        <div class="right">
+                            <ul class="description">
+
+                                <h3 id="data">DATA DE LANÇAMENTO</h3>
+                                <li>
+                                    <p>27 de Outubro 2017</p>
+                                </li>
+                                <h3 id="mode">MODOS DE JOGO</h3>
+                                <li>
+                                    <p>Modo TV, Modo Semiportátil, Modo Portátil</p>
+                                </li>
+                            </ul>
+                            <div class="trailer">
+                                <h2>Assista ao Trailer</h2>
+                                <iframe width="1280" height="720" src="https://www.youtube.com/embed/5kcdRBHM7kM"
+                                    title="Super Mario Odyssey Trailer" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Slide 2 -->
+                <article class="swiper-slide" id="slide-2">
+                    <figure>
+                        <img src="images/pokemon-legends-arceus.jpeg" alt="Banner do Pokemon Legends Arceus" />
+                    </figure>
+                    <div class="backscene"></div>
+                    <div class="banner">
+                        <div id="left-pkmn" class="left pokemon">
+                            <section class="features">
+                                <div class="rating">
+                                    <span class="score">8.3</span>
+                                    <div class="content">
+                                        <span class="subtitle">M E T A S C O R E</span>
+                                        <h4>Bom</h4>
+                                        <p>Prepare-se para uma nova aventura Pokémon, um jogo totalmente novo que
+                                            combina ação e exploração com as raízes de RPG da série Pokémon.</p>
+                                    </div>
+                                </div>
+                                <div class="pricing-pkmn">
+                                    <a href="https://www.nintendo.com/pt-br/store/products/pokemon-legends-arceus-switch/?srsltid=AfmBOopwG7aMLkeSIEd7ZsqCifS5cyc0ma5t6pIGb9NdI9GIVqmwzg8T">
+                                        <span class="comprar">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </span>
+                                    </a>
+                                    <div class="content pkmn-content">
+                                        <span class="subtitle">Pokemon Legends</span>
+                                        <h4>COMPRE AGORA</h4>
+                                        <p>Ação, RPG</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <h1 id="pokemon-title">Pokémon</h1>
+                        </div>
+                        <img src="images/red.png" alt="Treinador Pokemon Red" class="pokemon-img" />
+                        <div class="right">
+                            <ul class="description" id="desc-pkmn">
+                                <li>
+                                    <h3 id="data">DATA DE LANÇAMENTO</h3>
+                                    <p>28 de Janeiro</p>
+                                </li>
+                                <li>
+                                    <h3 id="mode">MODOS DE JOGO</h3>
+                                    <p>Modo TV, Modo Semiportátil, Modo Portátil</p>
+                                </li>
+                            </ul>
+                            <div class="trailer">
+                                <h2>Assista ao Trailer</h2>
+                                <iframe width="1280" height="720" src="https://www.youtube.com/embed/wOEHUANP-vo"
+                                    title="Pokemon Legends Arceus Trailer" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Slide 3 -->
+                <article class="swiper-slide" id="slide-3">
+                    <figure>
+                        <img src="images/The-Legend-of-Zelda-Breath-of-the-Wild.jpeg" alt="Banner de Zelda" />
+                    </figure>
+                    <div class="backscene"></div>
+                    <div class="banner zelda-banner">
+                        <div class="left">
+                            <section class="features">
+                                <div class="rating">
+                                    <span class="score">9.7</span>
+                                    <div class="content">
+                                        <span class="subtitle">M E T A S C O R E</span>
+                                        <h4>Ótimo</h4>
+                                        <p>
+                                            Esqueça tudo que você sabe sobre os jogos da série The Legend of Zelda.
+                                            Entre em um mundo de descobertas, exploração e aventura em The Legend of
+                                            Zelda: Breath of the Wild.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="pricing">
+                                       <a href="https://www.nintendo.com/pt-br/store/products/the-legend-of-zelda-breath-of-the-wild-switch/?srsltid=AfmBOooAc8hPBpzckaYkpQIsDhjRyL7IOC0t5rB15nAOWiDyIGaSFMQr">
+                                        <span class="comprar">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </span>
+                                    </a>
+                                 <div class="content">
+                                        <span class="subtitle">The Legend of Zelda: Breath of the Wild</span>
+                                        <h4>COMPRE AGORA</h4>
+                                        <p>Aventura, Ação, RPG</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <h1 id="zelda-title">The Legend Of Zelda: Breath Of The Wild</h1>
+                        </div>
+                        <img src="images/link.png" alt="Imagem do personagem Link" />
+                        <div class="right">
+                            <ul class="description" id="desc-zelda">
+                                <li>
+                                    <h3 id="data">DATA DE LANÇAMENTO</h3>
+                                    <p>3 de Março de 2017</p>
+                                </li>
+                                <li>
+                                    <h3 id="mode">MODOS DE JOGO</h3>
+                                    <p>Modo TV, Modo Semiportátil, Modo Portátil</p>
+                                </li>
+                            </ul>
+                            <div class="trailer">
+                                <h2>Assista ao Trailer</h2>
+                                <iframe width="1280" height="720" src="https://www.youtube.com/embed/1rPxiXXxftE"
+                                    title="The Legend of Zelda: Breath of the Wild Trailer" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <button class="swiper-button-prev" aria-label="Slide anterior"></button>
+            <button class="swiper-button-next" aria-label="Próximo slide"> </button>
+
+        </div>
+
+
+
+
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/app.js"></script>
+</body>
+
+</html>
